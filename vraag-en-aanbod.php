@@ -34,7 +34,10 @@ class VraagEnAanbod
         $registerShortcodes = new VEAregisterShortcodes();
         $registerTemplates = new VEAregisterTemplates();
         $formSubmit = new VEAformSubmissions();
+    }
 
+    function initUpdater() {
+        
         if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
             $config = array(
                 'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
@@ -43,7 +46,7 @@ class VraagEnAanbod
                 'raw_url' => 'https://raw.github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/master', // the GitHub raw url of your GitHub repo
                 'github_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal', // the GitHub url of your GitHub repo
                 'zip_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/zipball/master', // the zip url of the GitHub repo
-                'sslverify' => false, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
+                'sslverify' => true, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
                 'requires' => '5.2', // which version of WordPress does your plugin require?
                 'tested' => '6.5.3', // which version of WordPress is your plugin tested up to?
                 'readme' => 'README.md', // which file to use as the readme for the version number
@@ -54,6 +57,7 @@ class VraagEnAanbod
     }
 
     function register() {
+        add_action('admin_init', [$this, 'initUpdater']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue']);
         add_action('admin_enqueue_scripts', [$this, 'enqueueAdmin']);
         add_filter( 'script_loader_tag', [$this, 'set_scripts_type_attribute'], 10, 3 );
@@ -92,9 +96,6 @@ if ( class_exists( 'VraagEnAanbod' ) ) {
 // activation
 require_once plugin_dir_path(__FILE__) . 'handlers/VEA-activate.php';
 register_activation_hook( __FILE__, [ 'VEAactivate', 'activate']);
-
-require_once plugin_dir_path(__FILE__) . 'handlers/VEA-activate.php';
-register_activation_hook( __FILE__, [ 'VEAactivate', 'createPages']);
 
 // deactivation
 require_once plugin_dir_path(__FILE__) . 'handlers/VEA-deactivate.php';
