@@ -23,7 +23,7 @@ include 'handlers/VEA-registerTemplates.php';
 include 'handlers/VEA-registerShortcodes.php';
 include 'handlers/VEA-formSubmissions.php';
 include 'handlers/VEA-registerMetaboxes.php';
-include_once('handlers/VEA-updater.php');
+include_once 'handlers/VEA-updater.php';
 
 class VraagEnAanbod
 {
@@ -44,8 +44,8 @@ class VraagEnAanbod
                 'github_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal', // the GitHub url of your GitHub repo
                 'zip_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/zipball/master', // the zip url of the GitHub repo
                 'sslverify' => true, // whether WP should check the validity of the SSL cert when getting an update, see https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/2 and https://github.com/jkudish/WordPress-GitHub-Plugin-Updater/issues/4 for details
-                'requires' => '3.0', // which version of WordPress does your plugin require?
-                'tested' => '3.3', // which version of WordPress is your plugin tested up to?
+                'requires' => '5.2', // which version of WordPress does your plugin require?
+                'tested' => '6.5.3', // which version of WordPress is your plugin tested up to?
                 'readme' => 'README.md', // which file to use as the readme for the version number
                 'access_token' => '', // Access private repositories by authorizing under Plugins > GitHub Updates when this example plugin is installed
             );
