@@ -3,7 +3,7 @@
  * Plugin Name:       Vraag en Aanbod
  * Plugin URI:        https://galileo-academy.nl/
  * Description:       Creates a CPT, and adds forms for users to submit their own posts.
- * Version:           2.1.3
+ * Version:           2.1.4
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Jay Schmidt
@@ -38,7 +38,7 @@ class VraagEnAanbod
         if (is_admin()) { // note the use of is_admin() to double check that this is happening in the admin
             $config = array(
                 'slug' => plugin_basename(__FILE__), // this is the slug of your plugin
-                'proper_folder_name' => 'rotterdamse-uitdaging-plugin-personal', // this is the name of the folder your plugin lives in
+                'proper_folder_name' => 'Rotterdamse-Uitdaging-Plugin-Personal', // this is the name of the folder your plugin lives in
                 'api_url' => 'https://api.github.com/repos/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal', // the GitHub API url of your GitHub repo
                 'raw_url' => 'https://raw.github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/master', // the GitHub raw url of your GitHub repo
                 'github_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal', // the GitHub url of your GitHub repo
