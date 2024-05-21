@@ -1,0 +1,179 @@
+@import './configuration/variables.scss';
+@import './templates/archive.scss';
+@import './templates/shortcode-form.scss';
+
+@font-face {
+    font-family: 'Lexend Deca';
+    src: url(../../assets/fonts/LexendDeca-VariableFont_wght.ttf);
+}
+
+.vea-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    min-height: 400px;
+    background-image: url(../../assets/images/placeholder-vraag-en-aanbod.jpg);
+    padding: 40px 20px;
+
+    &__inner {
+        display: flex;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .maatschappelijke-waarde {
+            text-align: center;
+            border-radius: 10px;
+            background-color: white;
+            padding: 1px;
+
+            p {
+                margin: 0;
+            }
+
+            .top, .bottom {
+                padding: 10px;
+            }
+
+            .top {
+                font-weight: bold;
+                color: $secondary;
+            }
+            
+            .bottom {
+                border-radius: 0 0 10px 10px;
+                color: white;
+                background-color: $primary;
+                font-size: 24px;
+                text-transform: capitalize;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.vea-wrapper {
+    font-family: $primary-font;
+    background-color: #f7f7f7;
+
+    button {
+        margin-top: 10px;
+        color: white;
+        border-radius: 50px;
+        background-color: $primary;
+        border: none;
+
+        &:hover,
+        &:focus {
+            background-color: $secondary;
+        }
+    }
+
+    .bg-white {
+        padding: 10px 20px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 20px;
+
+        @media only screen and (max-width: 1024px) {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+
+        .vea_respond {
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .right {
+            margin: 20px 0;
+
+            @media only screen and (max-width: 1024px) {
+                margin: 0;
+            }
+
+            .info {
+                text-align: center;
+
+                @media only screen and (max-width: 1024px) {
+                    text-align: left;
+                }
+
+                p {
+                    margin-bottom: 5px;
+                }
+
+                .bottom {
+                    margin-top: 20px;
+                }
+            }
+        }
+    
+        .intro {
+            margin: 20px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    
+            h1 {
+                color: $secondary;
+
+                @media only screen and (max-width: 1024px) {
+                    font-size: 28px;
+                }
+            }
+        
+            .meta { 
+                color: $primary;
+            }
+    
+        }
+
+        .vea_beschrijving, .vea_tegenprestatie {
+            margin: 20px 0;
+        }
+    
+        p {
+            white-space: pre-line;
+        }
+    
+        form {
+            display: flex;
+            flex-flow: column;
+            gap: 20px;
+
+            .vea_naam_block {
+                display: grid;
+                gap: 10px;
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .col-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+    
+            input, textarea {
+                background-color: $input-background;
+            }
+    
+            label {
+                color: $secondary;
+            }
+    
+            input[type="submit"] {
+                color: white;
+                border-radius: 50px;
+                background-color: $primary;
+                border: none;
+            }
+        }
+
+    }
+}

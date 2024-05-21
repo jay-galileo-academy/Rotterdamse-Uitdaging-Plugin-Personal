@@ -1,0 +1,270 @@
+/* Colors */
+/* Fonts */
+/* Colors */
+/* Fonts */
+.vea-wrapper__inner.grid-1-3 {
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+@media only screen and (max-width: 1024px) {
+  .vea-wrapper__inner.grid-1-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vea-sidebar .wpc-filter-title {
+  padding: 10px;
+  background-color: #05415E;
+  color: white;
+}
+.vea-sidebar .wpc-filter-content label a {
+  color: #05415E;
+}
+
+.vea-main {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+.vea-main .vea-container {
+  overflow: hidden;
+  border-radius: 5px;
+  background-color: white;
+  color: #515151;
+}
+.vea-main .vea-container .image-container {
+  max-height: 255px;
+}
+.vea-main .vea-container .image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.vea-main .vea-container .content {
+  padding: 20px;
+}
+.vea-main .vea-container .content h4 {
+  margin: 0 0 10px;
+  color: #50B04C;
+}
+.vea-main .vea-container .content .meta p {
+  margin: 0;
+}
+.vea-main .vea-container .content .capitalize {
+  text-transform: capitalize;
+  font-weight: 600;
+  color: #05415E;
+}
+
+/* Colors */
+/* Fonts */
+.vea-form-wrapper form div.vea-inner div {
+  margin-bottom: 15px;
+}
+.vea-form-wrapper form div.vea-inner div p {
+  margin: 0;
+}
+.vea-form-wrapper .vea-hidden {
+  display: none;
+}
+.vea-form-wrapper input[type=submit] {
+  background-color: #50B04C;
+  border: 1px solid #50B04C;
+  color: white;
+}
+.vea-form-wrapper input[type=submit]:hover {
+  border: 1px solid #50B04C;
+  color: #50B04C;
+  background-color: white;
+}
+.vea-form-wrapper .error-notif, .vea-form-wrapper .vea-verplicht {
+  color: red;
+}
+.vea-form-wrapper .vea-verplicht {
+  padding: 0px 5px;
+  font-size: 16px;
+}
+.vea-form-wrapper .vea-naam-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.vea-form-wrapper .vea-notices {
+  display: flex;
+  margin-top: 20px;
+  border-bottom: 2px solid #50B04C;
+  background-color: rgba(235, 235, 235, 0.3882352941);
+  padding: 10px 20px;
+  gap: 10px;
+}
+.vea-form-wrapper .vea-notices p {
+  margin: 0;
+}
+.vea-form-wrapper .vea-grid {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+}
+.vea-form-wrapper .vea-grid input {
+  margin-left: -1px;
+  border-left: none;
+}
+.vea-form-wrapper .vea-grid .vea-euro-indicator {
+  background-color: #50B04C;
+  color: white;
+  padding: 7px 13px;
+  border: 1px solid grey;
+  font-size: 18px;
+}
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url(../../assets/fonts/LexendDeca-VariableFont_wght.ttf);
+}
+.vea-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-height: 400px;
+  background-image: url(../../assets/images/placeholder-vraag-en-aanbod.jpg);
+  padding: 40px 20px;
+}
+.vea-hero__inner {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.vea-hero__inner .maatschappelijke-waarde {
+  text-align: center;
+  border-radius: 10px;
+  background-color: white;
+  padding: 1px;
+}
+.vea-hero__inner .maatschappelijke-waarde p {
+  margin: 0;
+}
+.vea-hero__inner .maatschappelijke-waarde .top, .vea-hero__inner .maatschappelijke-waarde .bottom {
+  padding: 10px;
+}
+.vea-hero__inner .maatschappelijke-waarde .top {
+  font-weight: bold;
+  color: #50B04C;
+}
+.vea-hero__inner .maatschappelijke-waarde .bottom {
+  border-radius: 0 0 10px 10px;
+  color: white;
+  background-color: #05415E;
+  font-size: 24px;
+  text-transform: capitalize;
+  line-height: 24px;
+}
+
+.vea-wrapper {
+  font-family: "Lexend Deca", "sans-serif";
+  background-color: #f7f7f7;
+}
+.vea-wrapper button {
+  margin-top: 10px;
+  color: white;
+  border-radius: 50px;
+  background-color: #05415E;
+  border: none;
+}
+.vea-wrapper button:hover, .vea-wrapper button:focus {
+  background-color: #50B04C;
+}
+.vea-wrapper .bg-white {
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+.vea-wrapper__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  .vea-wrapper__inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+.vea-wrapper__inner .vea_respond {
+  margin-bottom: 20px;
+  display: none;
+}
+.vea-wrapper__inner .right {
+  margin: 20px 0;
+}
+@media only screen and (max-width: 1024px) {
+  .vea-wrapper__inner .right {
+    margin: 0;
+  }
+}
+.vea-wrapper__inner .right .info {
+  text-align: center;
+}
+@media only screen and (max-width: 1024px) {
+  .vea-wrapper__inner .right .info {
+    text-align: left;
+  }
+}
+.vea-wrapper__inner .right .info p {
+  margin-bottom: 5px;
+}
+.vea-wrapper__inner .right .info .bottom {
+  margin-top: 20px;
+}
+.vea-wrapper__inner .intro {
+  margin: 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.vea-wrapper__inner .intro h1 {
+  color: #50B04C;
+}
+@media only screen and (max-width: 1024px) {
+  .vea-wrapper__inner .intro h1 {
+    font-size: 28px;
+  }
+}
+.vea-wrapper__inner .intro .meta {
+  color: #05415E;
+}
+.vea-wrapper__inner .vea_beschrijving, .vea-wrapper__inner .vea_tegenprestatie {
+  margin: 20px 0;
+}
+.vea-wrapper__inner p {
+  white-space: pre-line;
+}
+.vea-wrapper__inner form {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+.vea-wrapper__inner form .vea_naam_block {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+.vea-wrapper__inner form .col-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.vea-wrapper__inner form input, .vea-wrapper__inner form textarea {
+  background-color: #F6F6F6;
+}
+.vea-wrapper__inner form label {
+  color: #50B04C;
+}
+.vea-wrapper__inner form input[type=submit] {
+  color: white;
+  border-radius: 50px;
+  background-color: #05415E;
+  border: none;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,75 @@
+@import '../configuration/variables.scss';
+
+.vea-form-wrapper {
+
+    form div.vea-inner div {
+        margin-bottom: 15px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .vea-hidden {
+        display: none;
+    }
+
+    input[type="submit"] {
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: white;
+
+        &:hover {
+            border: 1px solid $secondary;
+            color: $secondary;
+            background-color: white;
+        }
+    }
+
+    .error-notif, .vea-verplicht {
+        color: red;
+    }
+
+    .vea-verplicht {
+        padding: 0px 5px;
+        font-size: 16px;
+    }
+
+    .vea-naam-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .vea-notices {
+        display: flex;
+        margin-top: 20px;
+        border-bottom: 2px solid $secondary;
+        background-color: #ebebeb63;
+        padding: 10px 20px;
+        gap: 10px;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .vea-grid {
+        display: grid;
+        grid-template-columns: 40px 1fr;
+
+        input {
+            margin-left: -1px;
+            border-left: none;
+        }
+
+        .vea-euro-indicator {
+            background-color: $secondary;
+            color: white;
+            padding: 7px 13px;
+            border: 1px solid grey;
+            font-size: 18px;
+        }
+    }
+
+}
