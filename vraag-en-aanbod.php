@@ -3,7 +3,7 @@
  * Plugin Name:       Vraag en Aanbod
  * Plugin URI:        https://galileo-academy.nl/
  * Description:       Creates a CPT, and adds forms for users to submit their own posts.
- * Version:           2.1.0
+ * Version:           2.1.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Jay Schmidt
