@@ -3,7 +3,7 @@
  * Plugin Name:       Vraag en Aanbod
  * Plugin URI:        https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/
  * Description:       Creates a CPT, and adds forms for users to submit their own posts.
- * Version:           2.1.5
+ * Version:           2.1.6
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Jay Schmidt
