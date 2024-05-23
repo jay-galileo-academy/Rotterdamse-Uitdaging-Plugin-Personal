@@ -41,6 +41,21 @@ class VEAshortcode
         return telPattern.test(telefoonnummer);
     }
 
+    valFileupload(fileName) {
+        var allowed_extensions = ["jpg","png","JPG", "jpeg"];
+        var file_extension = fileName.split('.').pop().toLowerCase();
+
+        for(var i = 0; i < allowed_extensions.length; i++)
+        {
+            if(allowed_extensions[i]==file_extension)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     trimfield(fieldName) { 
         return fieldName.replace(/^\s+|\s+$/g,''); 
     }
@@ -58,6 +73,7 @@ class VEAshortcode
         var tegenprestatie_container = document.getElementById("vea_tegenprestatie");
         var radioVraagAanbod = document.querySelector("#vea_vraag_aanbod input[name='vraag_aanbod']:checked");
         var radioCategorie = document.querySelector("#vea_categorie_radio input[name='vea_categorie']:checked");
+        var inputField = document.getElementById("vea_upload").value;
 
         // Collect error messages
         var voornaam_error = document.querySelector(".vnaam-container .error-notif");
@@ -70,6 +86,7 @@ class VEAshortcode
         var tegenprestatie_error = document.querySelector("#vea_tegenprestatie .error-notif");
         var radioVraagAanbod_error = document.querySelector("#vea_vraag_aanbod .error-notif");
         var radioCategorie_error = document.querySelector("#vea_categorie_radio .error-notif");
+        var inputFieldContainer_error = document.querySelector(".vea_upload_container .error-notif");
 
         // Validate inputs
         if (voornaam == "") {
@@ -138,6 +155,13 @@ class VEAshortcode
             event.preventDefault();
         } else {
             radioCategorie_error.innerHTML = "Selecteer een geldige optie";
+            event.preventDefault();
+        }
+
+        if (this.valFileupload(inputField)) {
+            inputFieldContainer_error.innerHTML = "";
+        } else {
+            inputFieldContainer_error.innerHTML = "Selecteer een PNG, JPG of JPEG bestand";
             event.preventDefault();
         }
 

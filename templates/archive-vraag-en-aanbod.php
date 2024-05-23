@@ -15,11 +15,16 @@
             <?php $categorie = get_post_meta($current_post, '_vraag_en_aanbod_categorie', true); ?>
             <?php $organisatie = get_post_meta( $current_post, '_vraag_en_aanbod_organisatie', true ); ?>
             <?php $beschrijving = get_post_meta( $current_post, '_vraag_en_aanbod_beschrijving', true ); ?>
+            <?php if (has_post_thumbnail($current_post)) {
+                $thumbnail = get_the_post_thumbnail_url($current_post);
+            } else {
+                $thumbnail = plugin_dir_url(__FILE__) . '../assets/images/placeholder-vraag-en-aanbod.jpg';
+            } ?>
 
 
             <a class="vea-container" href="<?php the_permalink(); ?>">
                 <div class="image-container">
-                    <img src="<?php echo plugin_dir_url(__FILE__) . '../assets/images/placeholder-vraag-en-aanbod.jpg' ?>" alt="">
+                    <img src="<?php echo $thumbnail ?>" alt="">
                 </div>
                 <div class="content">
                     <h4><?php the_title(); ?></h4>

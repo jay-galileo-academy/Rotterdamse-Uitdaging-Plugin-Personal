@@ -21,7 +21,7 @@ class VEAregisterPostTypes
             'public' => true,
             'label' => 'Vraag en Aanbod',
             'menu_icon' => 'dashicons-buddicons-pm',
-            'supports' => array('title'),
+            'supports' => array('title', 'thumbnail'),
             'has_archive' => true,
         ]);
     }

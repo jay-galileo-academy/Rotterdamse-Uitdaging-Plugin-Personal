@@ -34,7 +34,7 @@
   color: #515151;
 }
 .vea-main .vea-container .image-container {
-  max-height: 255px;
+  height: 255px;
 }
 .vea-main .vea-container .image-container img {
   height: 100%;
@@ -64,6 +64,9 @@
 }
 .vea-form-wrapper form div.vea-inner div p {
   margin: 0;
+}
+.vea-form-wrapper label {
+  margin-bottom: 10px;
 }
 .vea-form-wrapper .vea-hidden {
   display: none;
@@ -126,8 +129,9 @@
   align-items: flex-end;
   justify-content: flex-start;
   min-height: 400px;
-  background-image: url(../../assets/images/placeholder-vraag-en-aanbod.jpg);
   padding: 40px 20px;
+  background-size: cover;
+  background-position: center center;
 }
 .vea-hero__inner {
   display: flex;
@@ -243,6 +247,9 @@
   display: flex;
   flex-flow: column;
   gap: 20px;
+}
+.vea-wrapper__inner form label {
+  margin-bottom: 10px;
 }
 .vea-wrapper__inner form .vea_naam_block {
   display: grid;

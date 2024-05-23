@@ -10,6 +10,7 @@ $type_key = get_post_meta( $post->ID, '_vraag_en_aanbod_type', true);
 $status_key = get_post_meta( $post->ID, '_vraag_en_aanbod_status', true);
 $categorie_key = get_post_meta( $post->ID, '_vraag_en_aanbod_categorie', true);
 $maatschappelijk_key = get_post_meta( $post->ID, '_vraag_en_aanbod_maatschappelijk', true );
+if (has_post_thumbnail()) { $thumbnail = get_the_post_thumbnail_url(); } else { $thumbnail = plugin_dir_url(__FILE__) . '../assets/images/placeholder-vraag-en-aanbod.jpg'; }
 
 $categorie = isset($categorie_key) ? $categorie_key : '';
 $type = isset($type_key) ? $type_key : '';
@@ -30,7 +31,7 @@ if (isset($maatschappelijk_key) && $maatschappelijk_key !== '' && $maatschappeli
 
 ?>
 
-<div class="vea-hero">
+<div class="vea-hero" style="background-image:url(<?php echo $thumbnail ?>)">
     <div class="vea-hero__inner">
         <div class="maatschappelijke-waarde">
             <div class="top">
@@ -99,6 +100,10 @@ if (isset($maatschappelijk_key) && $maatschappelijk_key !== '' && $maatschappeli
                         <label for="vea_response_reactie">Bericht</label>
                         <textarea id="vea_response_reactie" name="vea_response_reactie" placeholder="Vul hier het bericht in dat u wil versturen" rows="5" required></textarea>
                         <p class="error-notif"></p>
+                    </div>
+
+                    <div>
+                        <input type="text" id="vea_password" name="vea_password" style="display:none !important;" tabindex="-1" autocomplete="off">
                     </div>
                     
                     <input type="submit" value="Verstuur uw reactie">

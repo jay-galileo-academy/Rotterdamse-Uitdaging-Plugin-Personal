@@ -12,8 +12,9 @@
     align-items: flex-end;
     justify-content: flex-start;
     min-height: 400px;
-    background-image: url(../../assets/images/placeholder-vraag-en-aanbod.jpg);
     padding: 40px 20px;
+    background-size: cover;
+    background-position: center center;
 
     &__inner {
         display: flex;
@@ -146,6 +147,10 @@
             display: flex;
             flex-flow: column;
             gap: 20px;
+
+            label {
+                margin-bottom: 10px;
+            }
 
             .vea_naam_block {
                 display: grid;

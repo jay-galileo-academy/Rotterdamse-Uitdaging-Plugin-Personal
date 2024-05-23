@@ -16,7 +16,7 @@ class VEAregisterShortcodes
         ?>
 
         <div class="vea-form-wrapper">
-            <form id="vea_form" name="vea_form" method="post" action="">
+            <form id="vea_form" name="vea_form" method="post" action="" enctype="multipart/form-data">
                 <div class="vea-inner">
                     <div class="vea-naam-grid">
                         <div class="vnaam-container">
@@ -98,9 +98,17 @@ class VEAregisterShortcodes
                         <div class="vea-grid">
                             <span class="vea-euro-indicator">&euro;</span>
                             <input min="0" max="30000" type="number" name="vea_maatschappelijk" id="vea_maatschappelijk">
-                            <p class="error-notif"></p>
                         </div>
-                        
+                    </div>
+
+                    <div class="vea_upload_container">
+                        <label for="vea_upload">Voeg een afbeelding toe voor je vraag/aanbod</label><br/>
+                        <input type="file" name="vea_upload" id="vea_upload" accept="image/png, image/jpeg" >
+                        <p class="error-notif"></p>
+                    </div>
+
+                    <div>
+                        <input type="text" id="vea_password" name="vea_password" style="display:none !important;" tabindex="-1" autocomplete="off">
                     </div>
 
                     <input type="submit" value="Verzenden" tabindex="6" id="submit" name="submit" />
