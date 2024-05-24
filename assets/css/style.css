@@ -12,6 +12,9 @@
     grid-template-columns: 1fr;
   }
 }
+.vea-wrapper__inner.grid-1-3 p {
+  font-size: 16px;
+}
 
 .vea-sidebar .wpc-filter-title {
   padding: 10px;
@@ -147,6 +150,12 @@
   font-family: "Lexend Deca";
   src: url(../../assets/fonts/LexendDeca-VariableFont_wght.ttf);
 }
+body.single-vraag-en-aanbod .ast-container {
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 .vea-hero {
   display: flex;
   align-items: flex-end;
@@ -155,7 +164,6 @@
   padding: 40px 20px;
   background-size: cover;
   background-position: center center;
-  width: 100vw;
 }
 .vea-hero__inner {
   display: flex;
@@ -213,6 +221,9 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 20px;
+}
+.vea-wrapper__inner p {
+  font-size: 16px;
 }
 @media only screen and (max-width: 1024px) {
   .vea-wrapper__inner {
