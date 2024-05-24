@@ -45,6 +45,8 @@
   padding: 20px;
 }
 .vea-main .vea-container .content h4 {
+  font-size: 24px;
+  font-weight: 400;
   margin: 0 0 10px;
   color: #50B04C;
 }
@@ -103,6 +105,27 @@
 }
 .vea-form-wrapper .vea-notices p {
   margin: 0;
+}
+.vea-form-wrapper .vea_upload_container {
+  margin: 30px 0 30px !important;
+}
+.vea-form-wrapper .vea_upload_container .uitleg {
+  background-color: #e0e0e0;
+  margin: 20px 0 10px;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+.vea-form-wrapper .vea_upload_container .uitleg::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #e0e0e0;
 }
 .vea-form-wrapper .vea-grid {
   display: grid;
@@ -200,6 +223,17 @@
   margin-bottom: 20px;
   display: none;
 }
+.vea-wrapper__inner .vea-notices {
+  display: flex;
+  margin-top: 20px;
+  border-bottom: 2px solid #50B04C;
+  background-color: rgba(235, 235, 235, 0.3882352941);
+  padding: 10px 20px;
+  gap: 10px;
+}
+.vea-wrapper__inner .vea-notices p {
+  margin: 0;
+}
 .vea-wrapper__inner .right {
   margin: 20px 0;
 }
@@ -227,6 +261,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .vea-wrapper__inner .intro h1 {
+  font-size: 36px;
   color: #50B04C;
 }
 @media only screen and (max-width: 1024px) {
@@ -247,6 +282,13 @@
   display: flex;
   flex-flow: column;
   gap: 20px;
+}
+.vea-wrapper__inner form .error-notif, .vea-wrapper__inner form .vea-verplicht {
+  color: red;
+}
+.vea-wrapper__inner form .vea-verplicht {
+  padding: 0px 5px;
+  font-size: 16px;
 }
 .vea-wrapper__inner form label {
   margin-bottom: 10px;

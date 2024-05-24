@@ -235,7 +235,7 @@ class VEAformSubmissions
         $naam = $response_naam;
 
         // Send mail
-        $to = 'jay@galileo-academy.nl';
+        $to = 'jay@galileo-academy.nl, jay.schmidt@galileo-academy.nl';
         $subject = 'Er is gereageerd op uw ' . $type . ' "' . $title . '"';
         $body = 'Beste ' . $naam . ',<br/><br/>Iemand heeft een nieuwe reactie geplaatst op uw ' . $type . ' bij de Rotterdamse Uitdaging <br/><br/> Bericht: <br/>' . $response_reactie;
         ob_start();

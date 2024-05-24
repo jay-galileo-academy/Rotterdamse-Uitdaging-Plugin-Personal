@@ -93,6 +93,19 @@
             display: none;
         }
 
+        .vea-notices {
+            display: flex;
+            margin-top: 20px;
+            border-bottom: 2px solid $secondary;
+            background-color: #ebebeb63;
+            padding: 10px 20px;
+            gap: 10px;
+    
+            p {
+                margin: 0;
+            }
+        }
+
         .right {
             margin: 20px 0;
 
@@ -122,6 +135,7 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     
             h1 {
+                font-size: 36px;
                 color: $secondary;
 
                 @media only screen and (max-width: 1024px) {
@@ -147,6 +161,16 @@
             display: flex;
             flex-flow: column;
             gap: 20px;
+
+            .error-notif, .vea-verplicht {
+                color: red;
+            }
+        
+            .vea-verplicht {
+                padding: 0px 5px;
+                font-size: 16px;
+            }
+        
 
             label {
                 margin-bottom: 10px;

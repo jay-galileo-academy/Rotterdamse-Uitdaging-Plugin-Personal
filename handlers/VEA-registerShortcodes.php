@@ -66,13 +66,13 @@ class VEAregisterShortcodes
 
                     <div class="description-container">
                         <label for="description">Beschrijf je vraag/aanbod<span class="vea-verplicht">*</span></label><br />
-                        <textarea id="description" tabindex="3" name="description" cols="50" rows="4" placeholder="" required></textarea>
+                        <textarea id="description" tabindex="3" name="description" cols="50" rows="4" placeholder="Beschrijf zo volledig mogelijk je vraag/aanbod. Denk bv aan aantal, datum, afmetingen, etc. Maak het zo specifiek mogelijk!" required></textarea>
                         <p class="error-notif"></p>
                     </div>
                     
                     <div class="vea-hidden" id="vea_tegenprestatie" style="display:none;">
                         <label for="tegenprestatie">Tegenprestatie</label><br />
-                        <textarea id="tegenprestatie" tabindex="3" name="tegenprestatie" cols="50" rows="4" placeholder=""></textarea>
+                        <textarea id="tegenprestatie" tabindex="3" name="tegenprestatie" cols="50" rows="4" placeholder="Denk aan een sympathieke tegenprestatie voor je match. Bijvoorbeeld een lunch, een taart, meedoen met een activiteit of een aardigheidje voor de gever. Iets wat past bij jouw organisatie en activiteiten. Zo maak je geven nog leuker!"></textarea>
                         <p class="error-notif"></p>
                     </div>
 
@@ -104,6 +104,9 @@ class VEAregisterShortcodes
                     <div class="vea_upload_container">
                         <label for="vea_upload">Voeg een afbeelding toe voor je vraag/aanbod</label><br/>
                         <input type="file" name="vea_upload" id="vea_upload" accept="image/png, image/jpeg" >
+                        <div class="uitleg">
+                            <p>Voor de beste resultaten gebruik een landscape afbeelding met een minimale breedte van 1400 pixels</p>
+                        </div>
                         <p class="error-notif"></p>
                     </div>
 
