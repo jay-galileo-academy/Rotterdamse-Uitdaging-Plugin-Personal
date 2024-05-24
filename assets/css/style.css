@@ -77,7 +77,7 @@
 .vea-form-wrapper .vea-hidden {
   display: none;
 }
-.vea-form-wrapper input[type=text], .vea-form-wrapper textarea, .vea-form-wrapper input[type=number] {
+.vea-form-wrapper input[type=text], .vea-form-wrapper textarea, .vea-form-wrapper input[type=number], .vea-form-wrapper input[type=tel], .vea-form-wrapper input[type=email] {
   width: 100%;
 }
 .vea-form-wrapper input[type=submit] {
