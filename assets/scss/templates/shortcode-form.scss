@@ -18,19 +18,19 @@
         display: none;
     }
 
-    input {
+    input[type="text"], textarea, input[type="number"] {
         width: 100%;
     }
 
     input[type="submit"] {
-        background-color: $secondary;
-        border: 1px solid $secondary;
-        color: white;
+        background-color: $secondary !important;
+        border: 1px solid $secondary !important;
+        color: white !important;
 
         &:hover {
-            border: 1px solid $secondary;
-            color: $secondary;
-            background-color: white;
+            border: 1px solid $secondary !important;
+            color: $secondary !important;
+            background-color: white !important;
         }
     }
 
@@ -99,7 +99,7 @@
         .vea-euro-indicator {
             background-color: $secondary;
             color: white;
-            padding: 9x 13px;
+            padding: 9px 13px;
             border: 1px solid grey;
             font-size: 18px;
         }

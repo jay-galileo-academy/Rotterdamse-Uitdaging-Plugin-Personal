@@ -77,18 +77,18 @@
 .vea-form-wrapper .vea-hidden {
   display: none;
 }
-.vea-form-wrapper input {
+.vea-form-wrapper input[type=text], .vea-form-wrapper textarea, .vea-form-wrapper input[type=number] {
   width: 100%;
 }
 .vea-form-wrapper input[type=submit] {
-  background-color: #50B04C;
-  border: 1px solid #50B04C;
-  color: white;
+  background-color: #50B04C !important;
+  border: 1px solid #50B04C !important;
+  color: white !important;
 }
 .vea-form-wrapper input[type=submit]:hover {
-  border: 1px solid #50B04C;
-  color: #50B04C;
-  background-color: white;
+  border: 1px solid #50B04C !important;
+  color: #50B04C !important;
+  background-color: white !important;
 }
 .vea-form-wrapper .error-notif, .vea-form-wrapper .vea-verplicht {
   color: red;
@@ -146,7 +146,7 @@
 .vea-form-wrapper .vea-grid .vea-euro-indicator {
   background-color: #50B04C;
   color: white;
-  padding: 9x 13px;
+  padding: 9px 13px;
   border: 1px solid grey;
   font-size: 18px;
 }
