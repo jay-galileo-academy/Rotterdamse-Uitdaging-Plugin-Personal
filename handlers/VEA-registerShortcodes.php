@@ -101,15 +101,6 @@ class VEAregisterShortcodes
                         </div>
                     </div>
 
-                    <div class="vea_upload_container">
-                        <label for="vea_upload">Voeg een afbeelding toe voor je vraag/aanbod</label><br/>
-                        <input type="file" name="vea_upload" id="vea_upload" accept="image/png, image/jpeg" >
-                        <div class="uitleg">
-                            <p>Voor de beste resultaten gebruik een landscape afbeelding met een minimale breedte van 1400 pixels</p>
-                        </div>
-                        <p class="error-notif"></p>
-                    </div>
-
                     <div>
                         <input type="text" id="vea_password" name="vea_password" style="display:none !important;" tabindex="-1" autocomplete="off">
                     </div>

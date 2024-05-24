@@ -73,7 +73,6 @@ class VEAshortcode
         var tegenprestatie_container = document.getElementById("vea_tegenprestatie");
         var radioVraagAanbod = document.querySelector("#vea_vraag_aanbod input[name='vraag_aanbod']:checked");
         var radioCategorie = document.querySelector("#vea_categorie_radio input[name='vea_categorie']:checked");
-        var inputField = document.getElementById("vea_upload");
 
         // Collect error messages
         var voornaam_error = document.querySelector(".vnaam-container .error-notif");
@@ -86,7 +85,6 @@ class VEAshortcode
         var tegenprestatie_error = document.querySelector("#vea_tegenprestatie .error-notif");
         var radioVraagAanbod_error = document.querySelector("#vea_vraag_aanbod .error-notif");
         var radioCategorie_error = document.querySelector("#vea_categorie_radio .error-notif");
-        var inputFieldContainer_error = document.querySelector(".vea_upload_container .error-notif");
 
         // Validate inputs
         if (voornaam == "") {
@@ -155,15 +153,6 @@ class VEAshortcode
             event.preventDefault();
         } else {
             radioCategorie_error.innerHTML = "Selecteer een geldige optie";
-            event.preventDefault();
-        }
-
-        if (inputField.files.length == 0) {
-            inputFieldContainer_error.innerHTML = "";
-        } else if ( inputField.files.length > 0 && this.valFileupload(inputField.value) ) {
-            inputFieldContainer_error.innerHTML = "";
-        } else {
-            inputFieldContainer_error.innerHTML = "Selecteer een PNG, JPG of JPEG bestand";
             event.preventDefault();
         }
 

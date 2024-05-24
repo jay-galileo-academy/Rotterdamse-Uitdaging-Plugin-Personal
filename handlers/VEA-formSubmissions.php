@@ -42,45 +42,6 @@ class VEAformSubmissions
 
     }
 
-    function sanitizeImage(array $image) {
-
-        $allowed = array('jpeg', 'png', 'jpg', 'JPG');
-        $filename = $image['name'];
-        $ext = pathinfo($filename, PATHINFO_EXTENSION);
-
-        if (in_array($ext, $allowed)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    
-    function veaSetPostThumbnail($image, $post_id) {
-
-        if ( ! function_exists( 'download_url' ) ) {
-            require_once(ABSPATH . 'wp-admin/includes/media.php');
-            require_once(ABSPATH . 'wp-admin/includes/file.php');
-            require_once(ABSPATH . 'wp-admin/includes/image.php');
-        }
-
-        $file_array = array();
-        $file_array['name'] = $image['name'];
-
-        // Get image URL
-        $new_image = wp_handle_upload($image, array('test_form' => false));
-
-        $file_array['tmp_name'] = $new_image['file'];
-
-        
-        if ( is_wp_error( $file_array['tmp_name'] ) ) {
-            return $file_array['tmp_name'];
-        }
-
-        $id = media_handle_sideload($file_array, $post_id);
-
-        return set_post_thumbnail( $post_id, $id );
-    }
-
     function validateForm() {
 
         // Load in Mail classes
@@ -90,15 +51,6 @@ class VEAformSubmissions
         // Do some minor form validation to make sure there is content
         if ( !empty($_POST['vea_password']) ) {
             return;
-        }
-
-        if ( !empty($_FILES['vea_upload']) ) {
-
-            if ( $this->sanitizeImage($_FILES['vea_upload']) ) {
-                $new_vea_image = $_FILES['vea_upload'];
-            } else {
-                $new_vea_image = '';
-            }
         }
 
         if (!empty($_POST['vraag_aanbod']) && $this->sanitizeVraagAanbod($_POST['vraag_aanbod'])) {
