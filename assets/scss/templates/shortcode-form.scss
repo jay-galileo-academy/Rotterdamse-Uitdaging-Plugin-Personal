@@ -18,6 +18,10 @@
         display: none;
     }
 
+    input {
+        width: 100%;
+    }
+
     input[type="submit"] {
         background-color: $secondary;
         border: 1px solid $secondary;
@@ -95,7 +99,7 @@
         .vea-euro-indicator {
             background-color: $secondary;
             color: white;
-            padding: 7px 13px;
+            padding: 9x 13px;
             border: 1px solid grey;
             font-size: 18px;
         }
