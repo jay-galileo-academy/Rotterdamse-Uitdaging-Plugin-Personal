@@ -32,6 +32,16 @@ class VEAformSubmissions
 
     }
 
+    function sanitizeCategorie($value) {
+
+        if ($value === 'handjes' || $value === 'kennis' || $value === 'diensten' || $value === 'producten' || $value === 'tickets' || $value === 'anders') {
+            return $value;
+        } else {
+            return false;
+        }
+
+    }
+
     function sanitizeImage(array $image) {
 
         $allowed = array('jpeg', 'png', 'jpg', 'JPG');
@@ -125,7 +135,7 @@ class VEAformSubmissions
             $tegenprestatie = sanitize_textarea_field($_POST['tegenprestatie']);
         }
 
-        if (isset($_POST['vea_categorie'])) {
+        if (isset($_POST['vea_categorie']) && $this->sanitizeCategorie($_POST['vea_categorie']) ) {
             $categorie = $_POST['vea_categorie'];
         } else {
             $categorie = '';
@@ -215,7 +225,7 @@ class VEAformSubmissions
         }
 
         if (isset($_POST['vea_response_telefoonnummer']) ) {
-            $response_telefoonnummer = $_POST['vea_response_telefoonnummer'];
+            $response_telefoonnummer = sanitize_text_field($_POST['vea_response_telefoonnummer']);
         }
 
         if (isset($_POST['vea_response_reactie']) ) {
@@ -229,13 +239,14 @@ class VEAformSubmissions
 
         $title = get_the_title($post_id);
         $type_key = get_post_meta($post_id, '_vraag_en_aanbod_type', true);
+        $post_email = get_post_meta($post_id, '_vraag_en_aanbod_email', true);
         $post_url = get_the_permalink($post_id);
         
         $type = $type_key;
         $naam = $response_naam;
 
         // Send mail
-        $to = 'jay@galileo-academy.nl, jay.schmidt@galileo-academy.nl';
+        $to = array('match@rotterdamseuitdaging.nl', $post_email);
         $subject = 'Er is gereageerd op uw ' . $type . ' "' . $title . '"';
         $body = 'Beste ' . $naam . ',<br/><br/>Iemand heeft een nieuwe reactie geplaatst op uw ' . $type . ' bij de Rotterdamse Uitdaging <br/><br/> Bericht: <br/>' . $response_reactie;
         ob_start();
