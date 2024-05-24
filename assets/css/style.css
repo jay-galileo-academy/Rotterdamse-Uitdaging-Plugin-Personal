@@ -155,6 +155,7 @@
   padding: 40px 20px;
   background-size: cover;
   background-position: center center;
+  width: 100vw;
 }
 .vea-hero__inner {
   display: flex;
@@ -305,6 +306,7 @@
 }
 .vea-wrapper__inner form input, .vea-wrapper__inner form textarea {
   background-color: #F6F6F6;
+  width: 100%;
 }
 .vea-wrapper__inner form label {
   color: #50B04C;

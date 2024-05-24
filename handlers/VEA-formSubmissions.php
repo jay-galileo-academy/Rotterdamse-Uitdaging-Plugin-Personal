@@ -173,7 +173,7 @@ class VEAformSubmissions
         }
 
         //Send mail to admin
-        $to = 'jay@galileo-academy.nl';
+        $to = 'match@rotterdamseuitdaging.nl';
         $subject = 'Een nieuwe ' . $vraag_aanbod . ' op Rotterdamse Uitdaging';
         ob_start();
         require_once plugin_dir_path(__FILE__) . '../templates/mail/vea-email-header.php'; 

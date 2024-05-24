@@ -15,6 +15,7 @@
     padding: 40px 20px;
     background-size: cover;
     background-position: center center;
+    width: 100vw;
 
     &__inner {
         display: flex;
@@ -190,6 +191,7 @@
     
             input, textarea {
                 background-color: $input-background;
+                width: 100%;
             }
     
             label {
