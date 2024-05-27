@@ -16,6 +16,25 @@
   font-size: 18px;
 }
 
+.vea-sidebar .aanmelden {
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.vea-sidebar .aanmelden a {
+  color: white;
+  background-color: #05415E;
+  border-radius: 50px;
+  padding: 6px 5px;
+}
+.vea-sidebar .aanmelden a:hover {
+  background-color: #50B04C;
+}
 .vea-sidebar .wpc-filter-title {
   padding: 10px;
   font-size: 18px;

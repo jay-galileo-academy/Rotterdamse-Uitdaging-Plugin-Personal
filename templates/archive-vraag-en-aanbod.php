@@ -4,6 +4,10 @@
     <div class="vea-wrapper__inner grid-1-3">
 
         <div class="vea-sidebar">
+            <div class="aanmelden">
+                <p>Heb jij een vraag of aanbod?</p> <p>Gebruik dan de knop hier onder om deze aan te melden</p>
+                <a href="/vraag-en-aanbod-registreren/">Nieuwe vraag/aanbod</a>
+            </div>
             <?php echo do_shortcode('[fe_widget]'); ?>
         </div>
         <div class="vea-main">
