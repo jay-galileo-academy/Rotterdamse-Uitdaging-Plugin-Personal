@@ -154,10 +154,8 @@ class VEAshortcode
         } else {
             radioCategorie_error.innerHTML = "Selecteer een geldige optie";
             event.preventDefault();
-        }
-
+        }  
     }
-    
 }
 
 export default VEAshortcode;

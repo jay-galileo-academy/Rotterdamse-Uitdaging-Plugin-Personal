@@ -46,6 +46,31 @@ class VraagEnAanbod
         wp_enqueue_script( 'vea-js', plugins_url('/assets/js/main.js', __FILE__), false, true);
     }
 
+    function update() {
+        include_once 'handlers/VEA-updater.php';
+
+        define( 'WP_GITHUB_FORCE_UPDATE', true );
+
+        if ( is_admin() ) {
+
+            $config = array(
+                'slug' => plugin_basename( __FILE__ ),
+                'proper_folder_name' => 'rotterdamse-uitdaging-plugin-personal',
+                'api_url' => 'https://api.github.com/repos/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal',
+                'raw_url' => 'https://raw.github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/master',
+                'github_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal',
+                'zip_url' => 'https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/archive/master.zip',
+                'sslverify' => true,
+                'requires' => '3.0',
+                'tested' => '3.3',
+                'readme' => 'README.md',
+                'access_token' => '',
+            );
+
+            new WP_GitHub_Updater( $config );
+        }
+    }
+
     function enqueueAdmin() {
         wp_enqueue_script( 'vea-admin-js', plugins_url('/assets/js/admin/admin.js', __FILE__), false, true);
     }
