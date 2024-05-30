@@ -155,9 +155,9 @@ class VEAregisterMetaboxes
         $naam = sanitize_text_field($_POST['vea_naam']);
         $email = sanitize_text_field($_POST['vea_email']);
         $organisatie = sanitize_text_field($_POST['vea_organisatie']);
-        $beschrijving = sanitize_text_field($_POST['vea_beschrijving']);
+        $beschrijving = sanitize_textarea_field($_POST['vea_beschrijving']);
         $telefoonnummer = sanitize_text_field($_POST['vea_tel']);
-        $tegenprestatie = sanitize_text_field($_POST['vea_tegenprestatie']);
+        $tegenprestatie = sanitize_textarea_field($_POST['vea_tegenprestatie']);
         $maatschappelijk = sanitize_text_field($_POST['vea_waarde']);
         $type = sanitize_text_field($_POST['vea_vraag_aanbod']);
         $status = sanitize_text_field($_POST['vea_status']);
