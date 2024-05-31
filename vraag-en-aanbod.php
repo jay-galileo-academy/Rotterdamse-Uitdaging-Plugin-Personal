@@ -9,7 +9,7 @@
  * Author:            Jay Schmidt
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://example.com/my-plugin/
+ * Update URI:        https://github.com/jay-galileo-academy/Rotterdamse-Uitdaging-Plugin-Personal/
  * Text Domain:       vraag-en-aanbod
  * Domain Path:       /languages
  */
