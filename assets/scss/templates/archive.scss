@@ -55,6 +55,15 @@
     flex-flow: column;
     gap: 20px;
 
+    .vea-pagination {
+        display: flex;
+        justify-content: center;
+
+        .pagination {
+            margin: 0;
+        }
+    }
+
     .vea-container {
         overflow: hidden;
         border-radius: 5px;

@@ -50,6 +50,13 @@
   flex-flow: column;
   gap: 20px;
 }
+.vea-main .vea-pagination {
+  display: flex;
+  justify-content: center;
+}
+.vea-main .vea-pagination .pagination {
+  margin: 0;
+}
 .vea-main .vea-container {
   overflow: hidden;
   border-radius: 5px;

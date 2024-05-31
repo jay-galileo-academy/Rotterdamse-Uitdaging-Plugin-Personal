@@ -44,9 +44,9 @@
             <?php endwhile; else : ?>
                 <p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
             <?php endif; ?>
-        </div>
-        <div class="vea-pagination">
-            <?php the_posts_pagination(); ?>
+            <div class="vea-pagination">
+                <?php the_posts_pagination(); ?>
+            </div>
         </div>
     </div>
 </div>
