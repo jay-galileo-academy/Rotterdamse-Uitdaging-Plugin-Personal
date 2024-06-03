@@ -118,11 +118,6 @@ class VEAformSubmissions
 
         //save the new post and return its ID
         $pid = wp_insert_post($new_post); 
-        
-        // Set image as featured image
-        if ($new_vea_image) {
-            $this->veaSetPostThumbnail($new_vea_image, $pid);
-        }
 
         //Send mail to admin
         $to = 'match@rotterdamseuitdaging.nl';
@@ -134,7 +129,7 @@ class VEAformSubmissions
         $body_complete = ob_get_contents();
         ob_end_clean();
 
-        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $headers = array('From: Rotterdamse Uitdaging <match@rotterdamseuitdaging.nl> \r\n', 'Content-Type: text/html; charset=UTF-8');
 
         wp_mail($to, $subject, $body_complete, $headers);
 
@@ -148,7 +143,7 @@ class VEAformSubmissions
         $customer_body_complete = ob_get_contents();
         ob_end_clean();
 
-        $customer_headers = array('Content-Type: text/html; charset=UTF-8');
+        $customer_headers = array('From: Rotterdamse Uitdaging <match@rotterdamseuitdaging.nl> \r\n','Content-Type: text/html; charset=UTF-8');
 
         wp_mail($to_customer, $subject_customer, $customer_body_complete, $customer_headers);
 
@@ -197,7 +192,7 @@ class VEAformSubmissions
         $type = $type_key;
         $naam = $response_naam;
 
-        // Send mail
+        // Send mail to Admin and Post type owner
         $to = array('match@rotterdamseuitdaging.nl', $post_email);
         $subject = 'Er is gereageerd op uw ' . $type . ' "' . $title . '"';
         $body = 'Beste ' . $naam . ',<br/><br/>Iemand heeft een nieuwe reactie geplaatst op uw ' . $type . ' bij de Rotterdamse Uitdaging <br/><br/> Bericht: <br/>' . $response_reactie;
@@ -208,7 +203,7 @@ class VEAformSubmissions
         $body_complete = ob_get_contents();
         ob_end_clean();
 
-        $headers = array('Content-Type: text/html; charset=UTF-8');
+        $headers = array('From: Rotterdamse Uitdaging <match@rotterdamseuitdaging.nl> \r\n', 'Content-Type: text/html; charset=UTF-8');
 
         wp_mail($to, $subject, $body_complete, $headers);
     }
