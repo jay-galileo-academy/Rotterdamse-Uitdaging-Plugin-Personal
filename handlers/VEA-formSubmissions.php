@@ -187,10 +187,11 @@ class VEAformSubmissions
         $title = get_the_title($post_id);
         $type_key = get_post_meta($post_id, '_vraag_en_aanbod_type', true);
         $post_email = get_post_meta($post_id, '_vraag_en_aanbod_email', true);
+        $post_naam = get_post_meta($post_id, '_vraag_en_aanbod_naam', true);
         $post_url = get_the_permalink($post_id);
         
         $type = $type_key;
-        $naam = $response_naam;
+        $naam = $post_naam;
 
         // Send mail to Admin and Post type owner
         $to = array('match@rotterdamseuitdaging.nl', $post_email);
