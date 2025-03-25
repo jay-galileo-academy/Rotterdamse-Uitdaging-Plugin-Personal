@@ -57,6 +57,16 @@
 .vea-main .vea-pagination .pagination {
   margin: 0;
 }
+.vea-main .va-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .vea-main .va-list {
+    grid-template-columns: 1fr;
+  }
+}
 .vea-main .vea-container {
   overflow: hidden;
   border-radius: 5px;
@@ -65,22 +75,49 @@
 }
 .vea-main .vea-container .image-container {
   height: 255px;
+  position: relative;
+  background: black;
+}
+.vea-main .vea-container .image-container h4 {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  background-color: #50B04C;
+  padding: 10px 20px;
+  border-radius: 100px;
+  text-transform: capitalize;
 }
 .vea-main .vea-container .image-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  opacity: 0.6;
 }
 .vea-main .vea-container .content {
   padding: 20px;
 }
 .vea-main .vea-container .content h4 {
-  font-size: 24px;
+  display: inline-block;
+  font-size: 22px;
   font-weight: 400;
   margin: 0 0 10px;
   color: #50B04C;
 }
+.vea-main .vea-container .content .beschrijving {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
 .vea-main .vea-container .content .meta p {
+  font-size: 16px;
   margin: 0;
 }
 .vea-main .vea-container .content .capitalize {

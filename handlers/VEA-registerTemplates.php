@@ -23,12 +23,8 @@ class VEAregisterTemplates
     }
 
     function archiveTemplate($archive) {
-        global $post;
 
-        $post = get_the_ID();
-        $post_type = get_post_type($post);
-
-        if ($post_type == 'vraag-en-aanbod') {
+        if ( is_post_type_archive('vraag-en-aanbod') ) {
             if (file_exists( plugin_dir_path(__FILE__) . '../templates/archive-vraag-en-aanbod.php')) {
                 $archive = plugin_dir_path(__FILE__) . '../templates/archive-vraag-en-aanbod.php';
             }

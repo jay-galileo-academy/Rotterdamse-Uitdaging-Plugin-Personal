@@ -64,6 +64,16 @@
         }
     }
 
+    .va-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        @media only screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
     .vea-container {
         overflow: hidden;
         border-radius: 5px;
@@ -72,27 +82,59 @@
 
         .image-container {
             height: 255px;
+            position: relative;
+            background: black;
+
+            h4 {
+                display: inline-block;
+                font-size: 18px;
+                font-weight: 400;
+                margin: 0 0 10px;
+                color: white;
+                position: absolute;
+                bottom: 10px;
+                left: 20px;
+                background-color: $secondary;
+                padding: 10px 20px;
+                border-radius: 100px;
+                text-transform: capitalize;
+            }
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                opacity: 0.6;
+            }
         }
 
-        .image-container img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
+
     
         .content {
             padding: 20px;
 
             h4 {
-                font-size: 24px;
+                display: inline-block;
+                font-size: 22px;
                 font-weight: 400;
                 margin: 0 0 10px;
                 color: $secondary;
+
+            }
+
+            .beschrijving {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                margin-bottom: 10px;
+                font-size: 16px;
             }
 
             .meta {
 
                 p {
+                    font-size: 16px;
                     margin: 0;
                 }
             }
