@@ -23,6 +23,7 @@ include 'handlers/VEA-registerTemplates.php';
 include 'handlers/VEA-registerShortcodes.php';
 include 'handlers/VEA-formSubmissions.php';
 include 'handlers/VEA-registerMetaboxes.php';
+include 'handlers/VEA-optionPage.php';
 
 class VraagEnAanbod
 {
@@ -32,6 +33,7 @@ class VraagEnAanbod
         $registerMetaBoxes = new VEAregisterMetaboxes();
         $registerShortcodes = new VEAregisterShortcodes();
         $registerTemplates = new VEAregisterTemplates();
+        $registerOptionPage = new VEAoptionPage();
         $formSubmit = new VEAformSubmissions();
     }
 

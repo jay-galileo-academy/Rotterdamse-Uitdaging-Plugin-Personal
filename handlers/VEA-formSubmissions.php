@@ -32,6 +32,27 @@ class VEAformSubmissions
 
     }
 
+    function checkForDuplicatePosts($email, $title) {
+        $args = array(
+            'title'    => $title,
+            'post_type'     => 'vraag-en-aanbod',
+            'meta_query'    => array(
+                array(
+                    'key'   => '_vraag_en_aanbod_email',
+                    'value' => $email,
+                )
+            )
+        );
+
+        $post_list = get_posts( $args );
+
+        if ( !empty($post_list) ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     function sanitizeCategorie($value) {
 
         if ($value === 'handjes' || $value === 'kennis' || $value === 'diensten' || $value === 'producten' || $value === 'tickets' || $value === 'anders') {
@@ -50,6 +71,11 @@ class VEAformSubmissions
 
         // Do some minor form validation to make sure there is content
         if ( !empty($_POST['vea_password']) ) {
+            return;
+        }
+
+        if ( $this->checkForDuplicatePosts($_POST['email'], $_POST['korte_zin']) ) {
+            $_POST['duplicate'] = "Deze post bestaat al.";
             return;
         }
 
@@ -118,9 +144,11 @@ class VEAformSubmissions
 
         //save the new post and return its ID
         $pid = wp_insert_post($new_post); 
+        $get_option = get_option( 'vea-pilled' );
+        $option_email = $get_option['vea_email_field'];
 
         //Send mail to admin
-        $to = 'match@rotterdamseuitdaging.nl';
+        $to = $option_email;
         $subject = 'Een nieuwe ' . $vraag_aanbod . ' op Rotterdamse Uitdaging';
         ob_start();
         require_once plugin_dir_path(__FILE__) . '../templates/mail/vea-email-header.php'; 
@@ -179,8 +207,6 @@ class VEAformSubmissions
             $response_reactie = sanitize_textarea_field($_POST['vea_response_reactie']);
         }
 
-
-
         //collect post data
         $post_id = url_to_postid( $_SERVER['REQUEST_URI'], '_wpg_def_keyword', true );
 
@@ -193,8 +219,12 @@ class VEAformSubmissions
         $type = $type_key;
         $naam = $post_naam;
 
+        // Get settings email
+        $get_option = get_option( 'vea-pilled' );
+        $settings_email = $get_option['vea_email_field'];
+
         // Send mail to Admin and Post type owner
-        $to = array('match@rotterdamseuitdaging.nl', $post_email);
+        $to = array($settings_email, $post_email);
         $subject = 'Er is gereageerd op uw ' . $type . ' "' . $title . '"';
         $body = 'Beste ' . $naam . ',<br/><br/>Iemand heeft een nieuwe reactie geplaatst op uw ' . $type . ' bij de Rotterdamse Uitdaging <br/><br/> Bericht: <br/>' . $response_reactie;
         ob_start();
