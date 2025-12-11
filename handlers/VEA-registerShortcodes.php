@@ -37,12 +37,16 @@ class VEAregisterShortcodes
     }
     
     function vraagEnAanbodForm() {
+        // Grab site key
+        $get_option = get_option( 'vea-pilled' );
+        $option_recaptcha = $get_option['vea_recaptcha_field'];
 
         ob_start();
         ?>
 
         <div class="vea-form-wrapper">
             <?php echo $this->noticeControl(); ?>
+            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
             <form id="vea_form" name="vea_form" method="post" action="" enctype="multipart/form-data">
                 <div class="vea-inner">
                     <div class="vea-naam-grid">
@@ -132,10 +136,18 @@ class VEAregisterShortcodes
                         <input type="text" id="vea_password" name="vea_password" style="display:none !important;" tabindex="-1" autocomplete="off">
                     </div>
 
-                    <input type="submit" value="Verzenden" tabindex="6" id="submit" name="submit" />
+                    <div class="g-recaptcha" data-callback="recaptchaCallback" data-sitekey="<?php echo $option_recaptcha ?>"></div>
+
+                    <input type="submit" value="Verzenden" tabindex="6" id="submit" name="submit" disabled="disabled" />
                     <input type="hidden" name="action" value="new_vea_post" />
                 </div>
             </form>
+            <script type="text/javascript">
+                function recaptchaCallback() {
+                    var submit = document.getElementById('submit');
+                    submit.removeAttribute("disabled");
+                }
+            </script>
         </div>
 
         <?php

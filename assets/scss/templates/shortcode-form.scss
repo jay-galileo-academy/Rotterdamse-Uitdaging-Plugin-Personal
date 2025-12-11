@@ -23,14 +23,26 @@
     }
 
     input[type="submit"] {
-        background-color: $secondary !important;
-        border: 1px solid $secondary !important;
-        color: white !important;
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: white;
 
         &:hover {
-            border: 1px solid $secondary !important;
-            color: $secondary !important;
-            background-color: white !important;
+            border: 1px solid $secondary;
+            color: $secondary;
+            background-color: white;
+        }
+    }
+
+    input[type="submit"]:disabled {
+        background-color: #b4b4b4;
+        color: black;
+        border: 1px solid #b4b4b4;
+
+        &:hover {
+            background-color: #b4b4b4;
+            color: black;
+            border: 1px solid #b4b4b4;
         }
     }
 

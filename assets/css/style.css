@@ -144,14 +144,24 @@
   width: 100%;
 }
 .vea-form-wrapper input[type=submit] {
-  background-color: #50B04C !important;
-  border: 1px solid #50B04C !important;
-  color: white !important;
+  background-color: #50B04C;
+  border: 1px solid #50B04C;
+  color: white;
 }
 .vea-form-wrapper input[type=submit]:hover {
-  border: 1px solid #50B04C !important;
-  color: #50B04C !important;
-  background-color: white !important;
+  border: 1px solid #50B04C;
+  color: #50B04C;
+  background-color: white;
+}
+.vea-form-wrapper input[type=submit]:disabled {
+  background-color: #b4b4b4;
+  color: black;
+  border: 1px solid #b4b4b4;
+}
+.vea-form-wrapper input[type=submit]:disabled:hover {
+  background-color: #b4b4b4;
+  color: black;
+  border: 1px solid #b4b4b4;
 }
 .vea-form-wrapper .error-notif, .vea-form-wrapper .vea-verplicht {
   color: red;

@@ -41,6 +41,14 @@ class VEAoptionPage
             'vraag-en-aanbod', // Pagina connectie
             'vea_opties_sectie', // Section
         );
+
+        add_settings_field(
+            'vea_recaptcha_key',
+            __('Recaptcha Site key', 'vea'),
+            [$this, 'veaRecaptchaCallback'],
+            'vraag-en-aanbod',
+            'vea_opties_sectie'
+        );
     }
 
     public function registerOptionPage() {
@@ -79,6 +87,15 @@ class VEAoptionPage
 
         ?>
             <input type="email" id="vea_email_field" name="vea-pilled[vea_email_field]" value="<?php echo isset( $options['vea_email_field'] ) ? esc_attr( $options['vea_email_field'] ) : ''; ?>">
+        <?php
+    }
+
+    public function veaRecaptchaCallback($args) {
+        // Get the value of the setting we've registered with register_setting()
+        $options = get_option( 'vea-pilled' );
+
+        ?>
+            <input type="text" id="vea_recaptcha_field" name="vea-pilled[vea_recaptcha_field]" value="<?php echo isset( $options['vea_recaptcha_field'] ) ? esc_attr( $options['vea_recaptcha_field'] ) : ''; ?>">
         <?php
     }
 
